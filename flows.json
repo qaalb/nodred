@@ -1,0 +1,767 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a4409db7f1364f6f",
+        "type": "tab",
+        "label": "Flux 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3b5805fb217178b0",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#3d3846",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "true",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "025866b219ac4ef7",
+        "type": "ui_tab",
+        "name": "acceuil",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "dd23f5fb9aa7ee49",
+        "type": "ui_group",
+        "name": "Météo",
+        "tab": "025866b219ac4ef7",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5b24e66737f881fc",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "10.0.10.77",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f07b9e457a5b0aa5",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3cc11d24.ff01a2",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "eb888ad02db79b4f",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "900bf100f751a97c",
+        "type": "moment",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "France/Clichy",
+        "adjAmount": "1",
+        "adjType": "hours",
+        "adjDir": "add",
+        "format": "H:m:s",
+        "locale": "fr-FR",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "France/Europe",
+        "x": 400,
+        "y": 500,
+        "wires": [
+            [
+                "cee25e3913c13749"
+            ]
+        ]
+    },
+    {
+        "id": "50e9e34d48a40a27",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "dd23f5fb9aa7ee49",
+        "order": 5,
+        "width": "4",
+        "height": "4",
+        "gtype": "gage",
+        "title": "humdité",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0d06c96e21299a9b",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "dd23f5fb9aa7ee49",
+        "order": 6,
+        "width": "4",
+        "height": "4",
+        "gtype": "gage",
+        "title": "pression",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": "950",
+        "max": "1050",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 820,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "cee25e3913c13749",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "dd23f5fb9aa7ee49",
+        "order": 3,
+        "width": "0",
+        "height": "0",
+        "name": "textheure",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "75",
+        "color": "#f6d32d",
+        "x": 660,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "09d2f75b8812915a",
+        "type": "ui_template",
+        "z": "f6f2187d.f17ca8",
+        "group": "dd23f5fb9aa7ee49",
+        "name": "",
+        "order": 7,
+        "width": "6",
+        "height": "6",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>\n<font color=\"yellow\">{{msg.payload}}</font>\n<",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "global",
+        "className": "",
+        "x": 200,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7a0b5f155ffa2f41",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 520,
+        "wires": [
+            [
+                "900bf100f751a97c",
+                "3abfb80f7e07834f"
+            ]
+        ]
+    },
+    {
+        "id": "3abfb80f7e07834f",
+        "type": "moment",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "",
+        "input": "",
+        "inputType": "date",
+        "inTz": "France/Clichy",
+        "adjAmount": "",
+        "adjType": "days",
+        "adjDir": "add",
+        "format": "dddd D MMMM YYYY",
+        "locale": "fr-FR",
+        "output": "payload",
+        "outputType": "msg",
+        "outTz": "France/Europe",
+        "x": 400,
+        "y": 560,
+        "wires": [
+            [
+                "dd2f0c1032e611a4"
+            ]
+        ]
+    },
+    {
+        "id": "dd2f0c1032e611a4",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "dd23f5fb9aa7ee49",
+        "order": 2,
+        "width": "12",
+        "height": "1",
+        "name": "jour",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-right",
+        "className": "",
+        "style": true,
+        "font": "Arial,Arial,Helvetica,sans-serif",
+        "fontSize": "25",
+        "color": "#ffffff",
+        "x": 630,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "e665f9c78fefdb53",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "dd23f5fb9aa7ee49",
+        "order": 1,
+        "width": "12",
+        "height": "1",
+        "name": "",
+        "label": "clichy",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "style": true,
+        "font": "",
+        "fontSize": "25",
+        "color": "#26a269",
+        "x": 350,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "07c6e72a6536ece7",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "clichy",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 150,
+        "y": 440,
+        "wires": [
+            [
+                "e665f9c78fefdb53"
+            ]
+        ]
+    },
+    {
+        "id": "733bf96eb4d6de07",
+        "type": "ui_gauge",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "group": "dd23f5fb9aa7ee49",
+        "order": 4,
+        "width": "4",
+        "height": "4",
+        "gtype": "gage",
+        "title": "température",
+        "label": "°C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 830,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d318842046ab9b3a",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "ha/_temperature2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5b24e66737f881fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "733bf96eb4d6de07"
+            ]
+        ]
+    },
+    {
+        "id": "203bde97707bd207",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "ha/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5b24e66737f881fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 370,
+        "y": 260,
+        "wires": [
+            [
+                "50e9e34d48a40a27"
+            ]
+        ]
+    },
+    {
+        "id": "24f3a457718e43c2",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "ha/pressure",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5b24e66737f881fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 370,
+        "y": 200,
+        "wires": [
+            [
+                "0d06c96e21299a9b"
+            ]
+        ]
+    },
+    {
+        "id": "771ffa1fa327bdcf",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "topic/test",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f07b9e457a5b0aa5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1000,
+        "y": 140,
+        "wires": [
+            [
+                "104445f65d69b398"
+            ]
+        ]
+    },
+    {
+        "id": "b37669ef00a489d9",
+        "type": "mqtt out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "topic/test",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f07b9e457a5b0aa5",
+        "x": 1000,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "a114a73c9f21b552",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "mehdilebg",
+        "payloadType": "str",
+        "x": 830,
+        "y": 200,
+        "wires": [
+            [
+                "b37669ef00a489d9"
+            ]
+        ]
+    },
+    {
+        "id": "104445f65d69b398",
+        "type": "ui_text",
+        "z": "f6f2187d.f17ca8",
+        "group": "dd23f5fb9aa7ee49",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "row-center",
+        "className": "",
+        "style": true,
+        "font": "Verdana,Verdana,Geneva,sans-serif",
+        "fontSize": "21",
+        "color": "#ed333b",
+        "x": 1150,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "5d07d8e0e6765f50",
+        "type": "mqtt in",
+        "z": "a4409db7f1364f6f",
+        "name": "",
+        "topic": "ha/pressure",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5b24e66737f881fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 550,
+        "y": 300,
+        "wires": [
+            [
+                "482b5946f496c1df"
+            ]
+        ]
+    },
+    {
+        "id": "482b5946f496c1df",
+        "type": "debug",
+        "z": "a4409db7f1364f6f",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "bb71fef76eb6abe1",
+        "type": "mqtt in",
+        "z": "a4409db7f1364f6f",
+        "name": "",
+        "topic": "ha/_temperature2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5b24e66737f881fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 560,
+        "y": 420,
+        "wires": [
+            [
+                "49afd7bb38bc2ca7"
+            ]
+        ]
+    },
+    {
+        "id": "bc98c8580702def2",
+        "type": "mqtt in",
+        "z": "a4409db7f1364f6f",
+        "name": "",
+        "topic": "ha/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5b24e66737f881fc",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 550,
+        "y": 360,
+        "wires": [
+            [
+                "379a0e6e22d5433a"
+            ]
+        ]
+    },
+    {
+        "id": "379a0e6e22d5433a",
+        "type": "debug",
+        "z": "a4409db7f1364f6f",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 740,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "49afd7bb38bc2ca7",
+        "type": "debug",
+        "z": "a4409db7f1364f6f",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 440,
+        "wires": []
+    }
+]
